@@ -1,5 +1,5 @@
 const clientId = 'fb3b5786947d4553ad196c873820d656';
-const redirectUri = 'http://localhost:3000'
+const redirectUri = 'http://soundify.surge.sh'
 let accessToken;
 
 
