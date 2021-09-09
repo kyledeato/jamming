@@ -57,6 +57,10 @@ class App extends React.Component {
     })
   }
 
+  componentDidMount() {
+    window.addEventListener('load', Spotify.search(''));
+  }
+  
   render() {
     return (
       <div>

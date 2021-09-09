@@ -1,13 +1,15 @@
-const clientId = '*****';
+const clientId = 'fb3b5786947d4553ad196c873820d656';
 const redirectUri = 'http://localhost:3000'
 let accessToken;
+
 
 const Spotify = {
     getAccessToken() {
         if (accessToken){
             return accessToken;
         }
-
+        
+        
         //check for access token match
         const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
         const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
@@ -39,7 +41,7 @@ const Spotify = {
         return jsonResponse.tracks.items.map(track => ({
             id: track.id,
             name: track.name,
-            artist: track.artist[0].name,
+            artist: track.artists.name,
             album: track.album.name,
             uri: track.uri
         }))
